@@ -230,6 +230,20 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                     await ReconstructedImagesRecord.collection
                         .doc()
                         .set(reconstructedImagesCreateData);
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          'Please wiat while we save the reconstructed model to the chosen saving address!!!',
+                          style: TextStyle(
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                          ),
+                        ),
+                        duration: Duration(milliseconds: 4000),
+                        backgroundColor:
+                            FlutterFlowTheme.of(context).darkBackground,
+                      ),
+                    );
                   },
                   text: 'Reconstruct!',
                   options: FFButtonOptions(
