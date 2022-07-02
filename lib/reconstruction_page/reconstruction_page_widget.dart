@@ -218,8 +218,18 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                   ),
                 ),
                 FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    final reconstructedImagesCreateData =
+                        createReconstructedImagesRecordData(
+                      name: emailAddressLoginController.text,
+                      date: getCurrentTimestamp,
+                      frontImage:
+                          'https://paperbotz.files.wordpress.com/2011/01/smario_03.png',
+                      user: reconstructionPageUsersRecord.reference,
+                    );
+                    await ReconstructedImagesRecord.collection
+                        .doc()
+                        .set(reconstructedImagesCreateData);
                   },
                   text: 'Reconstruct!',
                   options: FFButtonOptions(
