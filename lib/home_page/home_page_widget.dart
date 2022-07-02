@@ -106,7 +106,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             child: InkWell(
                               onTap: () async {
                                 await launchURL(
-                                    'mailto:contact@health.ai.demo');
+                                    'mailto:gamechar3drecon@gmail.com');
                               },
                               child: Material(
                                 color: Colors.transparent,
