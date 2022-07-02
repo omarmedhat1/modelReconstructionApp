@@ -37,26 +37,7 @@ abstract class ReconstructedImagesRecord
   String get rightSideImage;
 
   @nullable
-  String get uid;
-
-  @nullable
-  String get email;
-
-  @nullable
-  @BuiltValueField(wireName: 'display_name')
-  String get displayName;
-
-  @nullable
-  @BuiltValueField(wireName: 'photo_url')
-  String get photoUrl;
-
-  @nullable
-  @BuiltValueField(wireName: 'created_time')
-  DateTime get createdTime;
-
-  @nullable
-  @BuiltValueField(wireName: 'phone_number')
-  String get phoneNumber;
+  DocumentReference get user;
 
   @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
@@ -68,12 +49,7 @@ abstract class ReconstructedImagesRecord
         ..frontImage = ''
         ..backImage = ''
         ..leftSideImage = ''
-        ..rightSideImage = ''
-        ..uid = ''
-        ..email = ''
-        ..displayName = ''
-        ..photoUrl = ''
-        ..phoneNumber = '';
+        ..rightSideImage = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('ReconstructedImages');
@@ -105,12 +81,7 @@ Map<String, dynamic> createReconstructedImagesRecordData({
   String backImage,
   String leftSideImage,
   String rightSideImage,
-  String uid,
-  String email,
-  String displayName,
-  String photoUrl,
-  DateTime createdTime,
-  String phoneNumber,
+  DocumentReference user,
 }) =>
     serializers.toFirestore(
         ReconstructedImagesRecord.serializer,
@@ -121,9 +92,4 @@ Map<String, dynamic> createReconstructedImagesRecordData({
           ..backImage = backImage
           ..leftSideImage = leftSideImage
           ..rightSideImage = rightSideImage
-          ..uid = uid
-          ..email = email
-          ..displayName = displayName
-          ..photoUrl = photoUrl
-          ..createdTime = createdTime
-          ..phoneNumber = phoneNumber));
+          ..user = user));
