@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "753430691436",
+    "project_id": "reconstructmodels",
+    "storage_bucket": "reconstructmodels.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:753430691436:android:d78f3b75e92ee31f13a249",
+        "android_client_info": {
+          "package_name": "health.ai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "753430691436-9hbh2fa5d4qhvd2harkqs5k11lm0cb2u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0zNpDIrO9gH1hTaXYDYhqd-j6fO6CibQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "753430691436-9hbh2fa5d4qhvd2harkqs5k11lm0cb2u.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "753430691436-3cm9jvhsrfe9iavps9r9ikmnqrsbc3es.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "health.ai"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
