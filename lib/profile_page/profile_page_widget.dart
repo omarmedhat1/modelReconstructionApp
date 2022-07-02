@@ -348,13 +348,6 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                                       ),
                                                     ),
                                                   ),
-                                                  Icon(
-                                                    Icons.chevron_right_rounded,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .grayLight,
-                                                    size: 24,
-                                                  ),
                                                 ],
                                               ),
                                               Padding(
