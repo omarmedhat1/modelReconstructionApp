@@ -249,176 +249,181 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                     ),
                   ],
                 ),
-                Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(20, 12, 20, 12),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Text(
-                            'Recent Reconstructions',
-                            style: FlutterFlowTheme.of(context).bodyText1,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
-                      child: StreamBuilder<List<ReconstructedImagesRecord>>(
-                        stream: queryReconstructedImagesRecord(
-                          limit: 3,
+                SingleChildScrollView(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(20, 12, 20, 12),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Text(
+                              'Recent Reconstructions',
+                              style: FlutterFlowTheme.of(context).bodyText1,
+                            ),
+                          ],
                         ),
-                        builder: (context, snapshot) {
-                          // Customize what your widget looks like when it's loading.
-                          if (!snapshot.hasData) {
-                            return Center(
-                              child: SizedBox(
-                                width: 40,
-                                height: 40,
-                                child: SpinKitPumpingHeart(
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryColor,
-                                  size: 40,
-                                ),
-                              ),
-                            );
-                          }
-                          List<ReconstructedImagesRecord>
-                              listViewReconstructedImagesRecordList =
-                              snapshot.data;
-                          return ListView.builder(
-                            padding: EdgeInsets.zero,
-                            shrinkWrap: true,
-                            scrollDirection: Axis.vertical,
-                            itemCount:
-                                listViewReconstructedImagesRecordList.length,
-                            itemBuilder: (context, listViewIndex) {
-                              final listViewReconstructedImagesRecord =
-                                  listViewReconstructedImagesRecordList[
-                                      listViewIndex];
-                              return Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 8),
-                                child: Material(
-                                  color: Colors.transparent,
-                                  elevation: 3,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(8),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
+                        child: StreamBuilder<List<ReconstructedImagesRecord>>(
+                          stream: queryReconstructedImagesRecord(
+                            queryBuilder: (reconstructedImagesRecord) =>
+                                reconstructedImagesRecord.orderBy('Date',
+                                    descending: true),
+                            limit: 10,
+                          ),
+                          builder: (context, snapshot) {
+                            // Customize what your widget looks like when it's loading.
+                            if (!snapshot.hasData) {
+                              return Center(
+                                child: SizedBox(
+                                  width: 40,
+                                  height: 40,
+                                  child: SpinKitPumpingHeart(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryColor,
+                                    size: 40,
                                   ),
-                                  child: Container(
-                                    width: MediaQuery.of(context).size.width,
-                                    height: 200,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .darkBackground,
+                                ),
+                              );
+                            }
+                            List<ReconstructedImagesRecord>
+                                listViewReconstructedImagesRecordList =
+                                snapshot.data;
+                            return ListView.builder(
+                              padding: EdgeInsets.zero,
+                              shrinkWrap: true,
+                              scrollDirection: Axis.vertical,
+                              itemCount:
+                                  listViewReconstructedImagesRecordList.length,
+                              itemBuilder: (context, listViewIndex) {
+                                final listViewReconstructedImagesRecord =
+                                    listViewReconstructedImagesRecordList[
+                                        listViewIndex];
+                                return Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 0, 0, 8),
+                                  child: Material(
+                                    color: Colors.transparent,
+                                    elevation: 3,
+                                    shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(8),
-                                      shape: BoxShape.rectangle,
                                     ),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  12, 12, 12, 12),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  Expanded(
-                                                    child: Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  4, 0, 0, 0),
-                                                      child: Text(
-                                                        listViewReconstructedImagesRecord
-                                                            .name,
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .title3,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(0, 8, 0, 0),
-                                                child: Row(
+                                    child: Container(
+                                      width: MediaQuery.of(context).size.width,
+                                      height: 200,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .darkBackground,
+                                        borderRadius: BorderRadius.circular(8),
+                                        shape: BoxShape.rectangle,
+                                      ),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    12, 12, 12, 12),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
                                                   children: [
-                                                    Card(
-                                                      clipBehavior: Clip
-                                                          .antiAliasWithSaveLayer,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .background,
+                                                    Expanded(
                                                       child: Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    8, 4, 8, 4),
+                                                                    4, 0, 0, 0),
                                                         child: Text(
-                                                          dateTimeFormat(
-                                                              'relative',
-                                                              listViewReconstructedImagesRecord
-                                                                  .date),
+                                                          listViewReconstructedImagesRecord
+                                                              .name,
                                                           style: FlutterFlowTheme
                                                                   .of(context)
-                                                              .bodyText1
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Lexend Deca',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .textColor,
-                                                              ),
+                                                              .title3,
                                                         ),
                                                       ),
                                                     ),
                                                   ],
                                                 ),
-                                              ),
-                                            ],
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(0, 8, 0, 0),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Card(
+                                                        clipBehavior: Clip
+                                                            .antiAliasWithSaveLayer,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .background,
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(8,
+                                                                      4, 8, 4),
+                                                          child: Text(
+                                                            dateTimeFormat(
+                                                                'relative',
+                                                                listViewReconstructedImagesRecord
+                                                                    .date),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyText1
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Lexend Deca',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .textColor,
+                                                                ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
                                           ),
-                                        ),
-                                        Container(
-                                          width: 100,
-                                          height: 100,
-                                          decoration: BoxDecoration(
-                                            color: Color(0xFFEEEEEE),
-                                          ),
-                                          child: Image.network(
-                                            listViewReconstructedImagesRecord
-                                                .frontImage,
+                                          Container(
                                             width: 100,
                                             height: 100,
-                                            fit: BoxFit.cover,
+                                            decoration: BoxDecoration(
+                                              color: Color(0xFFEEEEEE),
+                                            ),
+                                            child: Image.network(
+                                              listViewReconstructedImagesRecord
+                                                  .frontImage,
+                                              width: 100,
+                                              height: 100,
+                                              fit: BoxFit.cover,
+                                            ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
-                                ),
-                              );
-                            },
-                          ).animated(
-                              [animationsMap['listViewOnPageLoadAnimation']]);
-                        },
+                                );
+                              },
+                            ).animated(
+                                [animationsMap['listViewOnPageLoadAnimation']]);
+                          },
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ],
             ),
