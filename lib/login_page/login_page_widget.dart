@@ -1,4 +1,5 @@
 import '../auth/auth_util.dart';
+import '../backend/backend.dart';
 import '../complete_profile/complete_profile_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -658,6 +659,22 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                     .fromSTEB(0, 24, 0, 24),
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
+                                                    if (passwordCreateController
+                                                            ?.text !=
+                                                        passwordConfirmController
+                                                            ?.text) {
+                                                      ScaffoldMessenger.of(
+                                                              context)
+                                                          .showSnackBar(
+                                                        SnackBar(
+                                                          content: Text(
+                                                            'Passwords don\'t match!',
+                                                          ),
+                                                        ),
+                                                      );
+                                                      return;
+                                                    }
+
                                                     final user =
                                                         await createAccountWithEmail(
                                                       context,
@@ -669,6 +686,20 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                     if (user == null) {
                                                       return;
                                                     }
+
+                                                    final usersCreateData =
+                                                        createUsersRecordData(
+                                                      email:
+                                                          emailAddressController
+                                                              .text,
+                                                      password:
+                                                          passwordCreateController
+                                                              .text,
+                                                    );
+                                                    await UsersRecord.collection
+                                                        .doc(user.uid)
+                                                        .update(
+                                                            usersCreateData);
 
                                                     await Navigator.push(
                                                       context,
