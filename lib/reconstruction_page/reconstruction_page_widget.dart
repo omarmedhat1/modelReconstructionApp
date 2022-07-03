@@ -115,9 +115,6 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                     uploadedFileUrl1,
                                     'assets/images/download.png',
                                   ),
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.5,
-                                  height: 100,
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -139,6 +136,8 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                     final selectedMedia =
                                         await selectMediaWithSourceBottomSheet(
                                       context: context,
+                                      maxWidth: 100.00,
+                                      maxHeight: 100.00,
                                       allowPhoto: true,
                                     );
                                     if (selectedMedia != null &&
@@ -207,9 +206,6 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                     uploadedFileUrl2,
                                     'assets/images/download.png',
                                   ),
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.5,
-                                  height: 100,
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -299,9 +295,6 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                     uploadedFileUrl3,
                                     'assets/images/download.png',
                                   ),
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.5,
-                                  height: 100,
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -391,9 +384,6 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                     uploadedFileUrl4,
                                     'assets/images/download.png',
                                   ),
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.5,
-                                  height: 100,
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -502,6 +492,37 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                           fontFamily: 'Lexend Deca',
                           color: FlutterFlowTheme.of(context).tertiaryColor,
                         ),
+                  ),
+                ),
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'The reconstructed 3D model is saved at ',
+                      textAlign: TextAlign.center,
+                      style: FlutterFlowTheme.of(context).bodyText1.override(
+                            fontFamily: 'Lexend Deca',
+                            color: FlutterFlowTheme.of(context).textColor,
+                          ),
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Documents/Results',
+                        textAlign: TextAlign.center,
+                        style: FlutterFlowTheme.of(context).bodyText1.override(
+                              fontFamily: 'Lexend Deca',
+                              color: FlutterFlowTheme.of(context).textColor,
+                            ),
+                      ),
+                    ],
                   ),
                 ),
                 FFButtonWidget(
