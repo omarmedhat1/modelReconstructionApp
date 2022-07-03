@@ -1,6 +1,7 @@
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../backend/firebase_storage/storage.dart';
+import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -101,55 +102,80 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                             style: FlutterFlowTheme.of(context).bodyText1,
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(6, 6, 6, 6),
-                          child: InkWell(
-                            onTap: () async {
-                              final selectedMedia =
-                                  await selectMediaWithSourceBottomSheet(
-                                context: context,
-                                allowPhoto: true,
-                              );
-                              if (selectedMedia != null &&
-                                  selectedMedia.every((m) => validateFileFormat(
-                                      m.storagePath, context))) {
-                                showUploadMessage(
-                                  context,
-                                  'Uploading file...',
-                                  showLoading: true,
-                                );
-                                final downloadUrls = (await Future.wait(
-                                        selectedMedia.map((m) async =>
-                                            await uploadData(
-                                                m.storagePath, m.bytes))))
-                                    .where((u) => u != null)
-                                    .toList();
-                                ScaffoldMessenger.of(context)
-                                    .hideCurrentSnackBar();
-                                if (downloadUrls != null &&
-                                    downloadUrls.length ==
-                                        selectedMedia.length) {
-                                  setState(() =>
-                                      uploadedFileUrl1 = downloadUrls.first);
-                                  showUploadMessage(
-                                    context,
-                                    'Success!',
-                                  );
-                                } else {
-                                  showUploadMessage(
-                                    context,
-                                    'Failed to upload media',
-                                  );
-                                  return;
-                                }
-                              }
-                            },
-                            child: Image.asset(
-                              'assets/images/add-create-cross-new-plus-icon-163222.png',
-                              width: 100,
-                              height: 100,
-                              fit: BoxFit.cover,
-                            ),
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.3,
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          child: Stack(
+                            children: [
+                              Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(6, 6, 6, 6),
+                                child: Image.network(
+                                  uploadedFileUrl1,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.5,
+                                  height: 100,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                              Align(
+                                alignment: AlignmentDirectional(0, 0),
+                                child: FlutterFlowIconButton(
+                                  borderColor: Colors.transparent,
+                                  borderRadius: 30,
+                                  borderWidth: 1,
+                                  buttonSize: 60,
+                                  fillColor: Color(0x008B97A2),
+                                  icon: Icon(
+                                    Icons.add_a_photo_sharp,
+                                    color:
+                                        FlutterFlowTheme.of(context).textColor,
+                                    size: 30,
+                                  ),
+                                  onPressed: () async {
+                                    final selectedMedia =
+                                        await selectMediaWithSourceBottomSheet(
+                                      context: context,
+                                      allowPhoto: true,
+                                    );
+                                    if (selectedMedia != null &&
+                                        selectedMedia.every((m) =>
+                                            validateFileFormat(
+                                                m.storagePath, context))) {
+                                      showUploadMessage(
+                                        context,
+                                        'Uploading file...',
+                                        showLoading: true,
+                                      );
+                                      final downloadUrls = (await Future.wait(
+                                              selectedMedia.map((m) async =>
+                                                  await uploadData(
+                                                      m.storagePath, m.bytes))))
+                                          .where((u) => u != null)
+                                          .toList();
+                                      ScaffoldMessenger.of(context)
+                                          .hideCurrentSnackBar();
+                                      if (downloadUrls != null &&
+                                          downloadUrls.length ==
+                                              selectedMedia.length) {
+                                        setState(() => uploadedFileUrl1 =
+                                            downloadUrls.first);
+                                        showUploadMessage(
+                                          context,
+                                          'Success!',
+                                        );
+                                      } else {
+                                        showUploadMessage(
+                                          context,
+                                          'Failed to upload media',
+                                        );
+                                        return;
+                                      }
+                                    }
+                                  },
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ],
@@ -165,119 +191,80 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                             style: FlutterFlowTheme.of(context).bodyText1,
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(6, 6, 6, 6),
-                          child: InkWell(
-                            onTap: () async {
-                              final selectedMedia =
-                                  await selectMediaWithSourceBottomSheet(
-                                context: context,
-                                allowPhoto: true,
-                              );
-                              if (selectedMedia != null &&
-                                  selectedMedia.every((m) => validateFileFormat(
-                                      m.storagePath, context))) {
-                                showUploadMessage(
-                                  context,
-                                  'Uploading file...',
-                                  showLoading: true,
-                                );
-                                final downloadUrls = (await Future.wait(
-                                        selectedMedia.map((m) async =>
-                                            await uploadData(
-                                                m.storagePath, m.bytes))))
-                                    .where((u) => u != null)
-                                    .toList();
-                                ScaffoldMessenger.of(context)
-                                    .hideCurrentSnackBar();
-                                if (downloadUrls != null &&
-                                    downloadUrls.length ==
-                                        selectedMedia.length) {
-                                  setState(() =>
-                                      uploadedFileUrl2 = downloadUrls.first);
-                                  showUploadMessage(
-                                    context,
-                                    'Success!',
-                                  );
-                                } else {
-                                  showUploadMessage(
-                                    context,
-                                    'Failed to upload media',
-                                  );
-                                  return;
-                                }
-                              }
-                            },
-                            child: Image.asset(
-                              'assets/images/add-create-cross-new-plus-icon-163222.png',
-                              width: 100,
-                              height: 100,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Padding(
-                          padding:
-                              EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
-                          child: Text(
-                            'Left View',
-                            style: FlutterFlowTheme.of(context).bodyText1,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(6, 6, 6, 6),
-                          child: InkWell(
-                            onTap: () async {
-                              final selectedMedia =
-                                  await selectMediaWithSourceBottomSheet(
-                                context: context,
-                                allowPhoto: true,
-                              );
-                              if (selectedMedia != null &&
-                                  selectedMedia.every((m) => validateFileFormat(
-                                      m.storagePath, context))) {
-                                showUploadMessage(
-                                  context,
-                                  'Uploading file...',
-                                  showLoading: true,
-                                );
-                                final downloadUrls = (await Future.wait(
-                                        selectedMedia.map((m) async =>
-                                            await uploadData(
-                                                m.storagePath, m.bytes))))
-                                    .where((u) => u != null)
-                                    .toList();
-                                ScaffoldMessenger.of(context)
-                                    .hideCurrentSnackBar();
-                                if (downloadUrls != null &&
-                                    downloadUrls.length ==
-                                        selectedMedia.length) {
-                                  setState(() =>
-                                      uploadedFileUrl3 = downloadUrls.first);
-                                  showUploadMessage(
-                                    context,
-                                    'Success!',
-                                  );
-                                } else {
-                                  showUploadMessage(
-                                    context,
-                                    'Failed to upload media',
-                                  );
-                                  return;
-                                }
-                              }
-                            },
-                            child: Image.asset(
-                              'assets/images/add-create-cross-new-plus-icon-163222.png',
-                              width: 100,
-                              height: 100,
-                              fit: BoxFit.cover,
-                            ),
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.3,
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          child: Stack(
+                            children: [
+                              Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(6, 6, 6, 6),
+                                child: Image.network(
+                                  uploadedFileUrl2,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.5,
+                                  height: 100,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                              Align(
+                                alignment: AlignmentDirectional(0, 0),
+                                child: FlutterFlowIconButton(
+                                  borderColor: Colors.transparent,
+                                  borderRadius: 30,
+                                  borderWidth: 1,
+                                  buttonSize: 60,
+                                  fillColor: Color(0x008B97A2),
+                                  icon: Icon(
+                                    Icons.add_a_photo_sharp,
+                                    color:
+                                        FlutterFlowTheme.of(context).textColor,
+                                    size: 30,
+                                  ),
+                                  onPressed: () async {
+                                    final selectedMedia =
+                                        await selectMediaWithSourceBottomSheet(
+                                      context: context,
+                                      allowPhoto: true,
+                                    );
+                                    if (selectedMedia != null &&
+                                        selectedMedia.every((m) =>
+                                            validateFileFormat(
+                                                m.storagePath, context))) {
+                                      showUploadMessage(
+                                        context,
+                                        'Uploading file...',
+                                        showLoading: true,
+                                      );
+                                      final downloadUrls = (await Future.wait(
+                                              selectedMedia.map((m) async =>
+                                                  await uploadData(
+                                                      m.storagePath, m.bytes))))
+                                          .where((u) => u != null)
+                                          .toList();
+                                      ScaffoldMessenger.of(context)
+                                          .hideCurrentSnackBar();
+                                      if (downloadUrls != null &&
+                                          downloadUrls.length ==
+                                              selectedMedia.length) {
+                                        setState(() => uploadedFileUrl2 =
+                                            downloadUrls.first);
+                                        showUploadMessage(
+                                          context,
+                                          'Success!',
+                                        );
+                                      } else {
+                                        showUploadMessage(
+                                          context,
+                                          'Failed to upload media',
+                                        );
+                                        return;
+                                      }
+                                    }
+                                  },
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ],
@@ -293,55 +280,169 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                             style: FlutterFlowTheme.of(context).bodyText1,
                           ),
                         ),
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.3,
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          child: Stack(
+                            children: [
+                              Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(6, 6, 6, 6),
+                                child: Image.network(
+                                  uploadedFileUrl3,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.5,
+                                  height: 100,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                              Align(
+                                alignment: AlignmentDirectional(0, 0),
+                                child: FlutterFlowIconButton(
+                                  borderColor: Colors.transparent,
+                                  borderRadius: 30,
+                                  borderWidth: 1,
+                                  buttonSize: 60,
+                                  fillColor: Color(0x008B97A2),
+                                  icon: Icon(
+                                    Icons.add_a_photo_sharp,
+                                    color:
+                                        FlutterFlowTheme.of(context).textColor,
+                                    size: 30,
+                                  ),
+                                  onPressed: () async {
+                                    final selectedMedia =
+                                        await selectMediaWithSourceBottomSheet(
+                                      context: context,
+                                      allowPhoto: true,
+                                    );
+                                    if (selectedMedia != null &&
+                                        selectedMedia.every((m) =>
+                                            validateFileFormat(
+                                                m.storagePath, context))) {
+                                      showUploadMessage(
+                                        context,
+                                        'Uploading file...',
+                                        showLoading: true,
+                                      );
+                                      final downloadUrls = (await Future.wait(
+                                              selectedMedia.map((m) async =>
+                                                  await uploadData(
+                                                      m.storagePath, m.bytes))))
+                                          .where((u) => u != null)
+                                          .toList();
+                                      ScaffoldMessenger.of(context)
+                                          .hideCurrentSnackBar();
+                                      if (downloadUrls != null &&
+                                          downloadUrls.length ==
+                                              selectedMedia.length) {
+                                        setState(() => uploadedFileUrl3 =
+                                            downloadUrls.first);
+                                        showUploadMessage(
+                                          context,
+                                          'Success!',
+                                        );
+                                      } else {
+                                        showUploadMessage(
+                                          context,
+                                          'Failed to upload media',
+                                        );
+                                        return;
+                                      }
+                                    }
+                                  },
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(6, 6, 6, 6),
-                          child: InkWell(
-                            onTap: () async {
-                              final selectedMedia =
-                                  await selectMediaWithSourceBottomSheet(
-                                context: context,
-                                allowPhoto: true,
-                              );
-                              if (selectedMedia != null &&
-                                  selectedMedia.every((m) => validateFileFormat(
-                                      m.storagePath, context))) {
-                                showUploadMessage(
-                                  context,
-                                  'Uploading file...',
-                                  showLoading: true,
-                                );
-                                final downloadUrls = (await Future.wait(
-                                        selectedMedia.map((m) async =>
-                                            await uploadData(
-                                                m.storagePath, m.bytes))))
-                                    .where((u) => u != null)
-                                    .toList();
-                                ScaffoldMessenger.of(context)
-                                    .hideCurrentSnackBar();
-                                if (downloadUrls != null &&
-                                    downloadUrls.length ==
-                                        selectedMedia.length) {
-                                  setState(() =>
-                                      uploadedFileUrl4 = downloadUrls.first);
-                                  showUploadMessage(
-                                    context,
-                                    'Success!',
-                                  );
-                                } else {
-                                  showUploadMessage(
-                                    context,
-                                    'Failed to upload media',
-                                  );
-                                  return;
-                                }
-                              }
-                            },
-                            child: Image.asset(
-                              'assets/images/add-create-cross-new-plus-icon-163222.png',
-                              width: 100,
-                              height: 100,
-                              fit: BoxFit.cover,
-                            ),
+                          padding:
+                              EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                          child: Text(
+                            'Left View',
+                            style: FlutterFlowTheme.of(context).bodyText1,
+                          ),
+                        ),
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.3,
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          child: Stack(
+                            children: [
+                              Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(6, 6, 6, 6),
+                                child: Image.network(
+                                  uploadedFileUrl4,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.5,
+                                  height: 100,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                              Align(
+                                alignment: AlignmentDirectional(0, 0),
+                                child: FlutterFlowIconButton(
+                                  borderColor: Colors.transparent,
+                                  borderRadius: 30,
+                                  borderWidth: 1,
+                                  buttonSize: 60,
+                                  fillColor: Color(0x008B97A2),
+                                  icon: Icon(
+                                    Icons.add_a_photo_sharp,
+                                    color:
+                                        FlutterFlowTheme.of(context).textColor,
+                                    size: 30,
+                                  ),
+                                  onPressed: () async {
+                                    final selectedMedia =
+                                        await selectMediaWithSourceBottomSheet(
+                                      context: context,
+                                      allowPhoto: true,
+                                    );
+                                    if (selectedMedia != null &&
+                                        selectedMedia.every((m) =>
+                                            validateFileFormat(
+                                                m.storagePath, context))) {
+                                      showUploadMessage(
+                                        context,
+                                        'Uploading file...',
+                                        showLoading: true,
+                                      );
+                                      final downloadUrls = (await Future.wait(
+                                              selectedMedia.map((m) async =>
+                                                  await uploadData(
+                                                      m.storagePath, m.bytes))))
+                                          .where((u) => u != null)
+                                          .toList();
+                                      ScaffoldMessenger.of(context)
+                                          .hideCurrentSnackBar();
+                                      if (downloadUrls != null &&
+                                          downloadUrls.length ==
+                                              selectedMedia.length) {
+                                        setState(() => uploadedFileUrl4 =
+                                            downloadUrls.first);
+                                        showUploadMessage(
+                                          context,
+                                          'Success!',
+                                        );
+                                      } else {
+                                        showUploadMessage(
+                                          context,
+                                          'Failed to upload media',
+                                        );
+                                        return;
+                                      }
+                                    }
+                                  },
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ],
