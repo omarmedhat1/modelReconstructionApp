@@ -111,7 +111,10 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(6, 6, 6, 6),
                                 child: Image.network(
-                                  uploadedFileUrl1,
+                                  valueOrDefault<String>(
+                                    uploadedFileUrl1,
+                                    'assets/images/logo.png',
+                                  ),
                                   width:
                                       MediaQuery.of(context).size.width * 0.5,
                                   height: 100,
@@ -200,7 +203,10 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(6, 6, 6, 6),
                                 child: Image.network(
-                                  uploadedFileUrl2,
+                                  valueOrDefault<String>(
+                                    uploadedFileUrl2,
+                                    'assets/images/logo.png',
+                                  ),
                                   width:
                                       MediaQuery.of(context).size.width * 0.5,
                                   height: 100,
@@ -289,7 +295,10 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(6, 6, 6, 6),
                                 child: Image.network(
-                                  uploadedFileUrl3,
+                                  valueOrDefault<String>(
+                                    uploadedFileUrl3,
+                                    'assets/images/logo.png',
+                                  ),
                                   width:
                                       MediaQuery.of(context).size.width * 0.5,
                                   height: 100,
@@ -378,7 +387,10 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(6, 6, 6, 6),
                                 child: Image.network(
-                                  uploadedFileUrl4,
+                                  valueOrDefault<String>(
+                                    uploadedFileUrl4,
+                                    'assets/images/logo.png',
+                                  ),
                                   width:
                                       MediaQuery.of(context).size.width * 0.5,
                                   height: 100,
