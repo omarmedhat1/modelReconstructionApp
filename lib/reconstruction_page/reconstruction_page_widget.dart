@@ -113,7 +113,7 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                 child: Image.network(
                                   valueOrDefault<String>(
                                     uploadedFileUrl1,
-                                    'assets/images/logo.png',
+                                    'assets/images/download.png',
                                   ),
                                   width:
                                       MediaQuery.of(context).size.width * 0.5,
@@ -132,7 +132,7 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                   icon: Icon(
                                     Icons.add_a_photo_sharp,
                                     color:
-                                        FlutterFlowTheme.of(context).textColor,
+                                        FlutterFlowTheme.of(context).background,
                                     size: 30,
                                   ),
                                   onPressed: () async {
@@ -205,7 +205,7 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                 child: Image.network(
                                   valueOrDefault<String>(
                                     uploadedFileUrl2,
-                                    'assets/images/logo.png',
+                                    'assets/images/download.png',
                                   ),
                                   width:
                                       MediaQuery.of(context).size.width * 0.5,
@@ -224,7 +224,7 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                   icon: Icon(
                                     Icons.add_a_photo_sharp,
                                     color:
-                                        FlutterFlowTheme.of(context).textColor,
+                                        FlutterFlowTheme.of(context).background,
                                     size: 30,
                                   ),
                                   onPressed: () async {
@@ -297,7 +297,7 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                 child: Image.network(
                                   valueOrDefault<String>(
                                     uploadedFileUrl3,
-                                    'assets/images/logo.png',
+                                    'assets/images/download.png',
                                   ),
                                   width:
                                       MediaQuery.of(context).size.width * 0.5,
@@ -316,7 +316,7 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                   icon: Icon(
                                     Icons.add_a_photo_sharp,
                                     color:
-                                        FlutterFlowTheme.of(context).textColor,
+                                        FlutterFlowTheme.of(context).background,
                                     size: 30,
                                   ),
                                   onPressed: () async {
@@ -389,7 +389,7 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                 child: Image.network(
                                   valueOrDefault<String>(
                                     uploadedFileUrl4,
-                                    'assets/images/logo.png',
+                                    'assets/images/download.png',
                                   ),
                                   width:
                                       MediaQuery.of(context).size.width * 0.5,
@@ -408,7 +408,7 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                   icon: Icon(
                                     Icons.add_a_photo_sharp,
                                     color:
-                                        FlutterFlowTheme.of(context).textColor,
+                                        FlutterFlowTheme.of(context).background,
                                     size: 30,
                                   ),
                                   onPressed: () async {
