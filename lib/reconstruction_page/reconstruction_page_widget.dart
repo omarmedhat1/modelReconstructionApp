@@ -397,8 +397,7 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                         createReconstructedImagesRecordData(
                       name: emailAddressLoginController.text,
                       date: getCurrentTimestamp,
-                      frontImage:
-                          'https://paperbotz.files.wordpress.com/2011/01/smario_03.png',
+                      frontImage: uploadedFileUrl1,
                       user: reconstructionPageUsersRecord.reference,
                     );
                     await ReconstructedImagesRecord.collection
