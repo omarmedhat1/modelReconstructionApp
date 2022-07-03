@@ -119,7 +119,7 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(-1.24, -1.49),
+                                alignment: AlignmentDirectional(-0.62, -0.18),
                                 child: FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
                                   borderRadius: 30,
@@ -210,7 +210,7 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(-1.48, -1.24),
+                                alignment: AlignmentDirectional(-0.49, -0.28),
                                 child: FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
                                   borderRadius: 30,
@@ -299,7 +299,7 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(-1.42, -1.44),
+                                alignment: AlignmentDirectional(-0.25, -0.33),
                                 child: FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
                                   borderRadius: 30,
@@ -388,7 +388,7 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(-1.67, -1.49),
+                                alignment: AlignmentDirectional(-0.19, -0.48),
                                 child: FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
                                   borderRadius: 30,
