@@ -1,4 +1,5 @@
 import '../auth/auth_util.dart';
+import '../backend/api_requests/api_calls.dart';
 import '../backend/backend.dart';
 import '../backend/firebase_storage/storage.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
@@ -529,6 +530,9 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                       date: getCurrentTimestamp,
                       frontImage: uploadedFileUrl1,
                       user: reconstructionPageUsersRecord.reference,
+                      backImage: uploadedFileUrl2,
+                      rightSideImage: uploadedFileUrl3,
+                      leftSideImage: uploadedFileUrl4,
                     );
                     await ReconstructedImagesRecord.collection
                         .doc()
@@ -546,6 +550,12 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                         backgroundColor:
                             FlutterFlowTheme.of(context).darkBackground,
                       ),
+                    );
+                    await SendImagesCall.call(
+                      file1: uploadedFileUrl1,
+                      file2: uploadedFileUrl4,
+                      file3: uploadedFileUrl2,
+                      file4: uploadedFileUrl3,
                     );
                   },
                   text: 'Reconstruct!',
