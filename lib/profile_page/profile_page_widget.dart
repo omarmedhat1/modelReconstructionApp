@@ -294,6 +294,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                 snapshot.data;
                             return ListView.builder(
                               padding: EdgeInsets.zero,
+                              primary: false,
                               shrinkWrap: true,
                               scrollDirection: Axis.vertical,
                               itemCount:
