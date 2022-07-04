@@ -113,13 +113,13 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                 child: Image.network(
                                   valueOrDefault<String>(
                                     uploadedFileUrl1,
-                                    'assets/images/download.png',
+                                    'assets/images/downloads.png',
                                   ),
                                   fit: BoxFit.cover,
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(-0.62, -0.18),
+                                alignment: AlignmentDirectional(-0.09, -0.19),
                                 child: FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
                                   borderRadius: 30,
@@ -128,8 +128,7 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                   fillColor: Color(0x008B97A2),
                                   icon: Icon(
                                     Icons.add_a_photo_sharp,
-                                    color:
-                                        FlutterFlowTheme.of(context).background,
+                                    color: Color(0x4DFFFFFF),
                                     size: 30,
                                   ),
                                   onPressed: () async {
@@ -204,13 +203,13 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                 child: Image.network(
                                   valueOrDefault<String>(
                                     uploadedFileUrl2,
-                                    'assets/images/download.png',
+                                    'assets/images/downloads.png',
                                   ),
                                   fit: BoxFit.cover,
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(-0.49, -0.28),
+                                alignment: AlignmentDirectional(0.01, -0.13),
                                 child: FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
                                   borderRadius: 30,
@@ -219,8 +218,7 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                   fillColor: Color(0x008B97A2),
                                   icon: Icon(
                                     Icons.add_a_photo_sharp,
-                                    color:
-                                        FlutterFlowTheme.of(context).background,
+                                    color: Color(0x57FFFFFF),
                                     size: 30,
                                   ),
                                   onPressed: () async {
@@ -293,13 +291,13 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                 child: Image.network(
                                   valueOrDefault<String>(
                                     uploadedFileUrl3,
-                                    'assets/images/download.png',
+                                    'assets/images/downloads.png',
                                   ),
                                   fit: BoxFit.cover,
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(-0.25, -0.33),
+                                alignment: AlignmentDirectional(-0.09, -0.18),
                                 child: FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
                                   borderRadius: 30,
@@ -308,8 +306,7 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                   fillColor: Color(0x008B97A2),
                                   icon: Icon(
                                     Icons.add_a_photo_sharp,
-                                    color:
-                                        FlutterFlowTheme.of(context).background,
+                                    color: Color(0x56FFFFFF),
                                     size: 30,
                                   ),
                                   onPressed: () async {
@@ -382,13 +379,13 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                 child: Image.network(
                                   valueOrDefault<String>(
                                     uploadedFileUrl4,
-                                    'assets/images/download.png',
+                                    'assets/images/downloads.png',
                                   ),
                                   fit: BoxFit.cover,
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(-0.19, -0.48),
+                                alignment: AlignmentDirectional(-0.07, -0.24),
                                 child: FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
                                   borderRadius: 30,
@@ -397,8 +394,7 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                   fillColor: Color(0x008B97A2),
                                   icon: Icon(
                                     Icons.add_a_photo_sharp,
-                                    color:
-                                        FlutterFlowTheme.of(context).background,
+                                    color: Color(0x49FFFFFF),
                                     size: 30,
                                   ),
                                   onPressed: () async {
