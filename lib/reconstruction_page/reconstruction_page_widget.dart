@@ -112,10 +112,7 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(6, 6, 6, 6),
                                 child: Image.network(
-                                  valueOrDefault<String>(
-                                    uploadedFileUrl1,
-                                    'assets/images/downloads.png',
-                                  ),
+                                  uploadedFileUrl1,
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -202,10 +199,7 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(6, 6, 6, 6),
                                 child: Image.network(
-                                  valueOrDefault<String>(
-                                    uploadedFileUrl2,
-                                    'assets/images/downloads.png',
-                                  ),
+                                  uploadedFileUrl2,
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -290,10 +284,7 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(6, 6, 6, 6),
                                 child: Image.network(
-                                  valueOrDefault<String>(
-                                    uploadedFileUrl3,
-                                    'assets/images/downloads.png',
-                                  ),
+                                  uploadedFileUrl3,
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -378,10 +369,7 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(6, 6, 6, 6),
                                 child: Image.network(
-                                  valueOrDefault<String>(
-                                    uploadedFileUrl4,
-                                    'assets/images/downloads.png',
-                                  ),
+                                  uploadedFileUrl4,
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -551,11 +539,11 @@ class _ReconstructionPageWidgetState extends State<ReconstructionPageWidget> {
                             FlutterFlowTheme.of(context).darkBackground,
                       ),
                     );
-                    await SendImagesCall.call(
+                    await SendUrlsCall.call(
                       file1: uploadedFileUrl1,
-                      file2: uploadedFileUrl4,
+                      file2: uploadedFileUrl3,
                       file3: uploadedFileUrl2,
-                      file4: uploadedFileUrl3,
+                      file4: uploadedFileUrl4,
                     );
                   },
                   text: 'Reconstruct!',
